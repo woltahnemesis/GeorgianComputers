@@ -1,0 +1,1 @@
+This project is building web apps with ASP.NET Core, SQL Server, Entity Framework, and Bootstrap for COMP2084.
