@@ -1,4 +1,6 @@
-﻿
+﻿@* To get the product list *@
+@model IEnumerable<Georgian_Computers.Models.Product>
+
 @{
     ViewData["Title"] = "Shop at the Georgian Computer Store";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,15 +9,24 @@
 <h1>Please choose a product</h1>
 
 <ul>
-    <li>
-                                                    @* asp-route-(name of parameter) *@
-        <a asp-controller="Store" asp-action="Details" asp-route-product="Product 1">Product 1</a>
+    @*<li>*@
+                                                @* asp-route-(name of parameter) *@
+    @*<a asp-controller="Store" asp-action="Details" asp-route-product="Product 1">Product 1</a>
     </li>
     <li>
         <a asp-controller="Store" asp-action="Details" asp-route-product="Product 2">Product 2</a>
     </li>
     <li>
         <a asp-controller="Store" asp-action="Details" asp-route-product="Product 3">Product 3</a>
-    </li>
+    </li>*@
+
+    @foreach(var product in Model)
+    {
+        <li>
+            <a asp-controller="Store" asp-action="Details" asp-route-product="@product.Name">
+                @product.Name
+            </a>
+        </li>
+    }
 </ul>
 
